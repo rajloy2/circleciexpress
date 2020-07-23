@@ -13,21 +13,4 @@ jobs:
           command: ssh -o "StrictHostKeyChecking no" root@167.71.166.254"cd ~/circleciexpress; git pull; npm install; npm start &"
           
           
-version: 2.1
-orbs:
-  node: circleci/node@1.1.6
-jobs:
-  build-and-test:
-    executor:
-      name: node/default
-    steps:
-      - checkout
-      - node/with-cache:
-          steps:
-            - run: npm install
-            - run: npm test
-workflows:
-    build-and-test:
-      jobs:
-        - build-and-test
-  
+
